@@ -29,8 +29,11 @@ const LoginPage = () => {
         emailRef.current?.focus();
     }, [])
 
-    const onFormSubmit = () => {
-        // setFormValues(initialFormValue);
+    const onFormSubmit = (e: React.KeyboardEvent<HTMLButtonElement>) => {
+        if(e.key === 'Enter'){
+            setFormValues(initialFormValue);
+            emailRef.current?.focus();
+        }
     }
 
     const onEmailEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -45,19 +48,13 @@ const LoginPage = () => {
         }
     }
 
-    const onButtonEnter = (e: React.KeyboardEvent<HTMLButtonElement>) => {
-        if(e.key === 'Enter'){
-            emailRef.current?.focus();
-        }
-    }
-
     return (
         <>
             <div>LoginPage</div>
             <form >
                 <Input onChange={onChangeFormValues} value={formValues.email} fieldName='email' ref={emailRef} onKeyDown={onEmailEnter} />
                 <Input onChange={onChangeFormValues} value={formValues.password} fieldName='password' ref={passwordRef} onKeyDown={onPasswordEnter} />
-                <Button onClick={onFormSubmit} ref={buttonRef} onKeyDown={onButtonEnter} >Login</Button>
+                <Button ref={buttonRef} onKeyDown={onFormSubmit} >Login</Button>
             </form>
             <Link to='/home'>Home page</Link>
         </>
