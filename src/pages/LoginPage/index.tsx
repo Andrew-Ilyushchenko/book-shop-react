@@ -1,7 +1,9 @@
-import React, {useState, useRef, useEffect} from 'react';
-import { Link } from 'react-router-dom';
+import React, {useState, useRef, useEffect, useCallback} from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import Input from '../../Components/common-components/Input';
 import Button from '../../Components/common-components/Button';
+import './LoginPage.css';
+import loginRequest from '../../api/authApi';
 
 interface IFormValues {
     email: string;
@@ -19,34 +21,43 @@ const LoginPage = () => {
     const passwordRef = useRef<HTMLInputElement | null>(null);
     const buttonRef = useRef<HTMLButtonElement>(null);
 
+    const navigate = useNavigate();
+
     
 
-    const onChangeFormValues = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const onChangeFormValues = useCallback ((e: React.ChangeEvent<HTMLInputElement>) => {
         setFormValues(prevState => ({ ...prevState, [e.target.id]: e.target.value}))
-    };
+    }, []);
 
     useEffect( () => {
         emailRef.current?.focus();
-    }, [])
+    }, []);
 
-    const onFormSubmit = (e: React.KeyboardEvent<HTMLButtonElement>) => {
+    const onFormSubmit = useCallback ( async (e: React.KeyboardEvent<HTMLButtonElement>) => {
         if(e.key === 'Enter'){
-            setFormValues(initialFormValue);
-            emailRef.current?.focus();
+            try{
+                const response = await loginRequest(formValues);
+                navigate('/home');
+            } catch (e){
+                console.error(e);
+            } finally{
+                setFormValues(initialFormValue);
+                emailRef.current?.focus();
+            }
         }
-    }
+    }, [formValues]);
 
-    const onEmailEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    const onEmailEnter = useCallback ((e: React.KeyboardEvent<HTMLInputElement>) => {
         if(e.key === 'Enter'){
             passwordRef.current?.focus();
         }
-    }
+    }, []);
 
-    const onPasswordEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    const onPasswordEnter = useCallback ((e: React.KeyboardEvent<HTMLInputElement>) => {
         if(e.key === 'Enter'){
             buttonRef.current?.focus();
         }
-    }
+    }, []);
 
     return (
         <>

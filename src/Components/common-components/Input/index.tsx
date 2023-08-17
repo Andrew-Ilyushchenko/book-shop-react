@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 
 interface IInputProps {
     value: string;
@@ -13,4 +13,4 @@ const Input = ( {value, onChange, fieldName, onKeyDown} : IInputProps, ref: Reac
     )
 };
 
-export default React.forwardRef(Input);
+export default memo(React.forwardRef(Input));
