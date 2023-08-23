@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import { getBooks } from '../../api/bookApi';
 import List from '../../Components/List';
+import './HomePage.css';
 
 const HomePage = () => {
     const [Books, setBooks] = useState([]);
@@ -20,8 +21,10 @@ const HomePage = () => {
 
     return (
         <>
-            <div>Home Page</div>
-            <List list={Books} />
+            <div className="container">
+                <div>Home Page</div>
+                <List list={Books} />
+            </div>
         </>
     )
 };

@@ -13,7 +13,7 @@ interface IListItemProps{
 }
 
 const List = ({ list } : IListProps) => (
-  <ul>
+  <ul className='book-list'>
     {list.map((book) => (
       <>
       <ListItem1 key={book.isbn} title={book.title} image={book.image}/>
@@ -23,9 +23,11 @@ const List = ({ list } : IListProps) => (
 );
 
 const ListItem1 = ({ title, image } : IListItemProps) => 
-    <li key={title}>
-      <h3>{title}</h3>
-      <img src={image} alt="#" />    
+    <li className='book-list-item' key={title}>
+      <div className="book-wrap-img">
+        <img className='book-img' src={image} alt="#" />   
+      </div>
+      <h3 className='book-name'>{title}</h3> 
     </li>
 ;
 

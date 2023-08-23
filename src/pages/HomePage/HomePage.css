@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+.container{
+    max-width: 1200px;
+    margin: auto;
+}
+
+.book-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 24px 16px; 
+}
+.book-list-item{
+    width: 352px;
+    
+}
+.book-wrap-img{
+    background-color: #D7E4FD;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.book-img{
+    height: 264px;
+    width: 226px;
+    padding: 39px 36px;
+    
+}
+.book-name{
+    text-align: left;
+    font-size: 24px;
+}
