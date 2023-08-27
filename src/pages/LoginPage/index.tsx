@@ -59,13 +59,17 @@ const LoginPage = () => {
         }
     }, []);
 
+    const onClickSubmit = () => {
+        navigate('/home');
+    }
+
     return (
         <>
             <div>LoginPage</div>
             <form >
                 <Input onChange={onChangeFormValues} value={formValues.email} fieldName='email' ref={emailRef} onKeyDown={onEmailEnter} />
                 <Input onChange={onChangeFormValues} value={formValues.password} fieldName='password' ref={passwordRef} onKeyDown={onPasswordEnter} />
-                <Button ref={buttonRef} onKeyDown={onFormSubmit} >Login</Button>
+                <Button ref={buttonRef} onKeyDown={onFormSubmit} onClick={onClickSubmit}>Login</Button>
             </form>
             <Link to='/home'>Home page</Link>
         </>
