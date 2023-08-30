@@ -9,7 +9,12 @@
     max-width: 1120px;
     margin: auto;
 }
-
+.line{
+    margin: auto;
+    width: 1120px;
+    height: 1px;
+    background: var(--background-colors-gray, #E7E7E7);
+}
 .book-list{
     display: flex;
     flex-wrap: wrap;

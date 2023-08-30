@@ -1,5 +1,6 @@
 .subscribe{
     background: var(--tertiary-colors-purple, #F4EEFD);
+    margin: 72px 0;
 }
 .subscribe-wrapper{
     padding: 56px 64px;

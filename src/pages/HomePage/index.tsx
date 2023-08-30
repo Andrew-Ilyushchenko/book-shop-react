@@ -3,8 +3,15 @@ import { getBooks } from '../../api/bookApi';
 import List from '../../Components/List';
 import './HomePage.css';
 import InputSubscribe from '../../Components/common-components/InputSubscribe';
+import useWindowSize from '../../hooks/useWindowSize';
+import Header from '../../Components/common-components/Header';
+import Footer from '../../Components/common-components/Footer';
 
 const HomePage = () => {
+    const size = useWindowSize();
+
+    console.log({size});
+
     const [Books, setBooks] = useState([]);
 
     useEffect(() => {
@@ -23,9 +30,10 @@ const HomePage = () => {
     return (
         <>
             <div className="container">
-                <div>Home Page</div>
+                <Header />
                 <List list={Books} />
                 <InputSubscribe />
+                <Footer />
             </div>
         </>
     )

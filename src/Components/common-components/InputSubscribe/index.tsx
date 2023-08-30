@@ -3,10 +3,6 @@ import Input from '../Input';
 import Button from '../Button';
 import './InputSubscribe.css'
 
-interface IFormValues {
-    subscribe: string;
-}
-
 const initialFormValue = {
     subscribe: '',
 }
@@ -31,22 +27,20 @@ const InputSubscribe = () => {
     return(
         <>
             <div className="subscribe">
-                <div className="container">
-                    <div className="subscribe-wrapper">
+                <div className="subscribe-wrapper">
                         
-                        <h2 className="subscribe-main-title">
-                            Subscribe to Newsletter
-                        </h2>
+                    <h2 className="subscribe-main-title">
+                        Subscribe to Newsletter
+                    </h2>
 
-                        <p className="subtitle subtitle-subscribe">Be the first to 
+                    <p className="subtitle subtitle-subscribe">Be the first to 
                         know about new IT books, upcoming releases, 
                         exclusive offers and more.
-                        </p>
+                    </p>
 
-                        <div className="input-btn-wrap">
-                            <Input onChange={onChangeFormValues} value={formValues.subscribe} fieldName='subscribe' className='input-subscribe'/>
-                            <Button onKeyDown={onFormSubmit} onClick={clearInput} className='btn-subscribe'>Subscribe</Button>
-                        </div>
+                    <div className="input-btn-wrap">
+                        <Input onChange={onChangeFormValues} value={formValues.subscribe} fieldName='subscribe' className='input-subscribe'/>
+                        <Button onKeyDown={onFormSubmit} onClick={clearInput} className='btn-subscribe'>Subscribe</Button>
                     </div>
                 </div>
             </div>
