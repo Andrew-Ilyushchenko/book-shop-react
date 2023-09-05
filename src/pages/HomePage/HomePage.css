@@ -23,18 +23,18 @@
 }
 .book-list-item{
     width: 352px;
-    
 }
 .book-wrap-img{
     background-color: #D7E4FD;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 352px;
+    height: 264px;
 }
 .book-img{
-    height: 264px;
-    width: 226px;
-    padding: 39px 36px;
+    height: 187px;
+    width: 149px;
     
 }
 .book-name{

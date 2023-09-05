@@ -1,0 +1,8 @@
+.arrow-wrap{
+    padding-bottom: 32px;
+}
+.arrow{
+    width: 24px;
+    height: 24px;
+    fill: var(--background-colors-white, #FFF);
+}
