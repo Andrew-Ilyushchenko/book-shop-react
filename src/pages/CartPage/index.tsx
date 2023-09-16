@@ -2,8 +2,10 @@ import React from 'react';
 import Header from '../../Components/common-components/Header';
 import Footer from '../../Components/common-components/Footer';
 import './CartPage.css';
+import { useSelector } from 'react-redux';
 
 const CartPage = () => {
+    const cart = useSelector((state: any) => state.cart);
     return(
         <>
             <div className="container">

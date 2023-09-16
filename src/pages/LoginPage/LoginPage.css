@@ -1,3 +1,47 @@
 html{
     background-color:white;
 }
+.login-wrap{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 205px;
+    margin-top: 196px;
+    width: 544px;
+    padding-bottom: 0px;
+    border: 1px solid var(--background-colors-gray, #E7E7E7);
+    background: var(--background-colors-white, #FFF);
+}
+.login-navigation{
+    display: inline-flex;
+    height: 72px;
+    padding-top: 26px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    margin-bottom: 32px;
+    padding-top: 26px;
+}
+.login{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+.btn-sign-in{
+    width: 480px;
+    height: 56px;
+    flex-shrink: 0;
+    background: var(--system-colors-primary, #313037);
+    color: var(--background-colors-white, #FFF);
+    text-align: center;
+    font-family: Bebas Neue;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1.2px;
+    margin: 40px 0px;
+}

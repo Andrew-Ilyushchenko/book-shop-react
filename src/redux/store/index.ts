@@ -1,5 +1,6 @@
 import { createStore, compose } from 'redux';
 import rootReducer from '../reducers';
+import { type } from 'os';
 
 const composeEnhancers =
     process.env.NODE_ENV !== 'production' &&
@@ -16,4 +17,8 @@ const configureStore = (preloadedState: any) => (
 );
 
 const store = configureStore({});
+
+export type RootState = typeof store;
+export type AppDispatch = RootState['dispatch'];
+
 export default store;

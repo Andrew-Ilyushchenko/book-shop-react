@@ -4,6 +4,8 @@ import Input from '../../Components/common-components/Input';
 import Button from '../../Components/common-components/Button';
 import './LoginPage.css';
 import loginRequest from '../../api/authApi';
+import Header from '../../Components/common-components/Header';
+import Footer from '../../Components/common-components/Footer';
 
 interface IFormValues {
     email: string;
@@ -65,13 +67,24 @@ const LoginPage = () => {
 
     return (
         <>
-            <div>LoginPage</div>
-            <form >
-                <Input onChange={onChangeFormValues} value={formValues.email} fieldName='email' ref={emailRef} onKeyDown={onEmailEnter} />
-                <Input onChange={onChangeFormValues} value={formValues.password} fieldName='password' ref={passwordRef} onKeyDown={onPasswordEnter} />
-                <Button ref={buttonRef} onKeyDown={onFormSubmit} onClick={onClickSubmit}>Login</Button>
-            </form>
-            <Link to='/home'>Home page</Link>
+            <div className="container">
+                <Header/>
+                <div className="login-wrap">
+                    <div className="login-navigation">
+                        sign in sign up
+                    </div>
+                    <div className="login">
+                        <form >
+                        <Input onChange={onChangeFormValues} value={formValues.email} fieldName='email' ref={emailRef} onKeyDown={onEmailEnter} />
+                        <Input onChange={onChangeFormValues} value={formValues.password} fieldName='password' ref={passwordRef} onKeyDown={onPasswordEnter} />
+                        <Button ref={buttonRef} onKeyDown={onFormSubmit} onClick={onClickSubmit}>Login</Button>
+                        </form>
+                        <Link to='/home'>Home page</Link>
+                    </div>
+                    <Button className='btn-sign-in'>SIGN IN</Button>
+                </div>
+                <Footer/>
+            </div>
         </>
     )
 };

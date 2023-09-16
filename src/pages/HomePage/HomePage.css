@@ -23,6 +23,10 @@
 }
 .book-list-item{
     width: 352px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 .book-wrap-img{
     background-color: #D7E4FD;
@@ -40,4 +44,23 @@
 .book-name{
     text-align: left;
     font-size: 24px;
+}
+.book_subtitle{
+    color: var(--system-colors-secondary, #A8A8A8);
+    font-family: Helios;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+.btn_add{
+    background: var(--system-colors-primary, #313037);
+    color: var(--background-colors-white, #FFF);
+    text-align: center;
+    font-family: Bebas Neue;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1.2px;
 }

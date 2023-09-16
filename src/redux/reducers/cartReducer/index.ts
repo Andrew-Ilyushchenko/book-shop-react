@@ -1,11 +1,16 @@
-import { cart } from "../../../constans/cart";
+import { ADD_CART, REMOVE_CART } from '../../actions/actions';
+import { TCartActionType } from '../../actions/cartActionCreators';
 
-const initialState = cart;
+interface IInitialState {
+    text?: string,
+    id?: string
+}
 
-//@ts-ignore
-const cartReducer = (state = initialState, {type, payload}) => {
+const initialState: IInitialState[] = [];
+
+const cartReducer = (state = initialState, {type, payload}: TCartActionType ) => {
     switch(type){
-        case 'ADD_CART':
+        case ADD_CART:
             return [
                 ...state,
                 {
@@ -13,7 +18,7 @@ const cartReducer = (state = initialState, {type, payload}) => {
                     id: payload.id
                 }
             ]
-        case 'REMOVE_CART':
+        case REMOVE_CART:
             return state.filter(
                 item => item.id !== payload.id
             )
