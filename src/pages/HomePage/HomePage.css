@@ -15,6 +15,15 @@
     height: 1px;
     background: var(--background-colors-gray, #E7E7E7);
 }
+.main-title{
+    padding-bottom: 48px;
+    color: var(--system-colors-primary, #313037);
+    font-family: Bebas Neue;
+    font-size: 56px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 64px;
+}
 .book-list{
     display: flex;
     flex-wrap: wrap;
