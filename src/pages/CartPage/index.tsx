@@ -2,8 +2,9 @@ import React from 'react';
 import Header from '../../Components/common-components/Header';
 import Footer from '../../Components/common-components/Footer';
 import './CartPage.css';
-import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import ListCart from '../../Components/ListCart';
+import { useSelector } from 'react-redux';
 
 const CartPage = () => {
     const cart = useSelector((state: any) => state.cart);
@@ -22,6 +23,9 @@ const CartPage = () => {
                     </div>
                 </Link>
                 <h1 className='main-title'>YOUR CART</h1>
+                
+                <ListCart list={cart}/>
+
                 <Footer />
             </div>
         </>

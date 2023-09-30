@@ -2,26 +2,26 @@ import { ADD_CART, REMOVE_CART } from '../actions';
 
 interface IAddTaskAction {
     type: typeof ADD_CART,
-    payload: { text: string, id: string }
+    payload:  {id: number}
 }
 
 interface IRemoveTaskAction {
     type: typeof REMOVE_CART,
-    payload: { id: string }
+    payload: { id: number }
 }
 
 export type TCartActionType = IAddTaskAction | IRemoveTaskAction;
 
-export const addCart = (cart: {text: string, id: string}) : TCartActionType => {
+export const addCart = (id: number) : TCartActionType => {
     return(
         {
         type: ADD_CART,
-        payload: { text: cart.text, id: cart.id }
+        payload: {id}
         }
     )
 };
 
-export const removeCart = (id: string) : TCartActionType => {
+export const removeCart = (id: number) : TCartActionType => {
     return (
         {
             type: REMOVE_CART,

@@ -6,6 +6,7 @@ import InputSubscribe from '../../Components/common-components/InputSubscribe';
 import useWindowSize from '../../hooks/useWindowSize';
 import Header from '../../Components/common-components/Header';
 import Footer from '../../Components/common-components/Footer';
+import { useAppDispatch } from '../../redux/hooks';
 
 const HomePage = () => {
     const size = useWindowSize();
