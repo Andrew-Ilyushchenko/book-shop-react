@@ -26,7 +26,6 @@ const HomePage = () => {
         } 
         fetchBooks();
     }, []);
-    console.log(Books)
 
     return (
         <>

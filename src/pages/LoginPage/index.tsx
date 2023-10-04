@@ -77,11 +77,10 @@ const LoginPage = () => {
                         <form >
                         <Input onChange={onChangeFormValues} value={formValues.email} fieldName='email' ref={emailRef} onKeyDown={onEmailEnter} />
                         <Input onChange={onChangeFormValues} value={formValues.password} fieldName='password' ref={passwordRef} onKeyDown={onPasswordEnter} />
-                        <Button ref={buttonRef} onKeyDown={onFormSubmit} onClick={onClickSubmit}>Login</Button>
                         </form>
                         <Link to='/home'>Home page</Link>
                     </div>
-                    <Button className='btn-sign-in'>SIGN IN</Button>
+                    <Button className='btn-sign-in' ref={buttonRef} onKeyDown={onFormSubmit} onClick={onClickSubmit}>SIGN IN</Button>
                 </div>
                 <Footer/>
             </div>

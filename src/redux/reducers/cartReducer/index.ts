@@ -2,7 +2,7 @@ import { ADD_CART, REMOVE_CART } from '../../actions/actions';
 import { TCartActionType } from '../../actions/cartActionCreators';
 
 interface IInitialState {
-    id?: number,
+    id?: number | undefined
 }
 
 const initialState: IInitialState[] = [];

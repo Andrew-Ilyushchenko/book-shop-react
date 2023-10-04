@@ -3,7 +3,7 @@ import ListItem from '../List/ListItem/index';
 import { title } from 'process';
 import Button from '../common-components/Button';
 import { useAppDispatch } from '../../redux/hooks';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { removeCart } from '../../redux/actions/cartActionCreators';
 
 interface IListProps{
@@ -14,7 +14,7 @@ interface IListItemProps{
   title?: string;
   image?: string;
   subtitle?: string;
-  id?: number;
+  id?: number | undefined;
 }
 
 const ListCart = ({ list } : IListProps) => {
@@ -24,24 +24,35 @@ const ListCart = ({ list } : IListProps) => {
   const onRemove = (id: number) => {
     dispatch(removeCart(id));
   }
-  return(
-    <ul className='cart-list'>
-    {list.map((cart) => (
-      <>
-        <ListItem1 
-          key={cart.isbn} 
-          title={cart.title} 
-          image={cart.image} 
-          subtitle={cart.subtitle} 
-          onRemove={onRemove}
-        />
-      </>
-    ))}
+
+  const checkId = () => {
+    const items: JSX.Element[] = [];
+    for (let key in list) {
+      for (let key1 in cart) {
+        if (list[key].isbn13 === cart[key1].id) {
+          items.push(
+            <ListItem1
+              title={list[key].title}
+              image={list[key].image}
+              subtitle={list[key].subtitle}
+              id={list[key].id}
+              onRemove={() => onRemove(list[key].isbn13)}
+            />
+          );
+        }
+      }
+    }
+    return items;
+  };
+  
+  return (
+    <ul className="cart-list">
+      {checkId()}
     </ul>
-  )
+  );
 };
 
-const ListItem1 = ({ title, image, subtitle, onRemove} : IListItemProps & {onRemove:(id:number) => void}) => 
+const ListItem1 = ({ title, image, subtitle, onRemove, id} : IListItemProps & {onRemove:(id:number) => void}) => 
   <li className='cart-list-item' key={title}>
   <div className='cart-wrap-img'>
     <img className='cart-img' src={image} alt="#" />   

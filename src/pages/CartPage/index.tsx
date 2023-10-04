@@ -1,13 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from '../../Components/common-components/Header';
 import Footer from '../../Components/common-components/Footer';
 import './CartPage.css';
 import { Link } from 'react-router-dom';
 import ListCart from '../../Components/ListCart';
 import { useSelector } from 'react-redux';
+import { getBooks } from '../../api/bookApi';
 
 const CartPage = () => {
-    const cart = useSelector((state: any) => state.cart);
+    const [Books, setBooks] = useState([]);
+
+    useEffect(() => {
+        const fetchBooks = async () => {
+            try{
+                const response = await getBooks();
+                setBooks(response.books);
+            } catch (e){
+                console.error(e);
+            } 
+        } 
+        fetchBooks();
+    }, []);
     return(
         <>
             <div className="container">
@@ -24,7 +37,7 @@ const CartPage = () => {
                 </Link>
                 <h1 className='main-title'>YOUR CART</h1>
                 
-                <ListCart list={cart}/>
+                <ListCart list={Books}/>
 
                 <Footer />
             </div>

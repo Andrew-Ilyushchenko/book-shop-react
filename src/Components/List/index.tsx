@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ListItem from './ListItem';
 import { title } from 'process';
 import Button from '../common-components/Button';
@@ -15,7 +15,7 @@ interface IListItemProps{
   image?: string;
   subtitle?: string;
   price?: number;
-  id?:number;
+  id?:number | undefined;
 }
 
 const List = ({ list } : IListProps) => {
