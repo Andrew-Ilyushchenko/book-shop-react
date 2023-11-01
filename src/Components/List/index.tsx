@@ -19,14 +19,17 @@ interface IListItemProps{
 }
 
 const List = ({ list } : IListProps) => {
-  const [counts, setCounts] = useState();
+  const [counts, setCounts] = useState({});
   
   const dispatch = useAppDispatch();
 
   const cart = useSelector((state: any) => state.cart);
 
   const onAdd = (id: number) => {
-    dispatch(addCart(id));
+    setCounts(prevCounts => ({
+      ...prevCounts, [id]: prevCounts[id] ? prevCounts[id] + 1 : 1
+    }))
+    dispatch(addCart(id, counts));
   }
   return (
     <ul className='book-list'>
