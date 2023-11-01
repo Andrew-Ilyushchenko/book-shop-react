@@ -67,18 +67,19 @@ const LoginPage = () => {
 
     return (
         <>
+            <Header />
             <div className="container">
-                <Header/>
                 <div className="login-wrap">
                     <div className="login-navigation">
                         sign in sign up
                     </div>
                     <div className="login">
                         <form >
-                        <Input onChange={onChangeFormValues} value={formValues.email} fieldName='email' ref={emailRef} onKeyDown={onEmailEnter} />
-                        <Input onChange={onChangeFormValues} value={formValues.password} fieldName='password' ref={passwordRef} onKeyDown={onPasswordEnter} />
+                        <h3 className='email-title'>Email</h3>
+                        <Input onChange={onChangeFormValues} value={formValues.email} fieldName='email' ref={emailRef} onKeyDown={onEmailEnter} className='auth-input'/>
+                        <h3 className='password-title'>Password</h3>
+                        <Input onChange={onChangeFormValues} value={formValues.password} fieldName='password' ref={passwordRef} onKeyDown={onPasswordEnter} className='auth-input'/>
                         </form>
-                        <Link to='/home'>Home page</Link>
                     </div>
                     <Button className='btn-sign-in' ref={buttonRef} onKeyDown={onFormSubmit} onClick={onClickSubmit}>SIGN IN</Button>
                 </div>

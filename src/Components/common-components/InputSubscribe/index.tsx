@@ -27,17 +27,16 @@ const InputSubscribe = () => {
     return(
         <>
             <div className="subscribe">
-                <div className="subscribe-wrapper">
-                        
-                    <h2 className="subscribe-main-title">
-                        Subscribe to Newsletter
-                    </h2>
-
-                    <p className="subtitle subtitle-subscribe">Be the first to 
-                        know about new IT books, upcoming releases, 
-                        exclusive offers and more.
-                    </p>
-
+                <div className="subscribe-wrapper"> 
+                    <div className="subscribe-text-wrapper">
+                        <h2 className="subscribe-main-title">
+                            Subscribe to Newsletter
+                        </h2>
+                        <p className="subtitle subtitle-subscribe">Be the first to 
+                            know about new IT books, upcoming releases, 
+                            exclusive offers and more.
+                        </p>
+                    </div>
                     <div className="input-btn-wrap">
                         <Input onChange={onChangeFormValues} value={formValues.subscribe} fieldName='subscribe' className='input-subscribe'/>
                         <Button onKeyDown={onFormSubmit} onClick={clearInput} className='btn-subscribe'>Subscribe</Button>

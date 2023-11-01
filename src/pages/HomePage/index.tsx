@@ -29,14 +29,12 @@ const HomePage = () => {
 
     return (
         <>
-            <div className="home-page-wrap">
-                <div className="container">
-                    <Header />
-                    <h1 className="main-title">NEW RELEASES BOOKS</h1>
-                    <List list={Books} />
-                    <InputSubscribe />
-                    <Footer />
-                </div>
+            <Header />
+            <div className="container">
+            <h1 className="main-title">NEW RELEASES BOOKS</h1>
+            <List list={Books} />
+            <InputSubscribe />
+            <Footer />
             </div>
         </>
     )

@@ -5,13 +5,21 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 24px;
+    padding: 24px 0px;
+    border-bottom: 0.0625rem solid #E7E7E7;
 }
 .logo{
     width: 137.508px;
     height: 28.64px;
     flex-shrink: 0;
     fill: var(--system-colors-primary, #313037);
+}
+.header_burger{
+    display: none;
+}
+.wrap-search-input{
+    max-width: 542px;
+    max-height: 56px;
 }
 .search-input{
     width: 542px;
@@ -58,5 +66,108 @@
     height: 56px;
 }
 
+@media (max-width: 975px){
+    .search-input{
+        width: 524px;
+    }
+}
+@media (max-width: 950px){
+    .search-input{
+        width: 499px;
+    }
+}
+@media (max-width: 925px){
+    .search-input{
+        width: 474px;
+    }
+}
+@media (max-width: 900px){
+    .search-input{
+        width: 449px;
+    }
+}
+@media (max-width: 870px){
+    .search-input{
+        width: 419px;
+    }
+}
+@media (max-width: 845px){
+    .search-input{
+        width: 396px;
+    }
+}
+@media (max-width: 819px){
+    .search-input{
+        width: 350px;
+    }
+}
+@media (max-width: 768px){
+    .header-navigation{
+        display: none;
+    }
+    .search-input{
+        display: none;
+    }
+    .header_burger{
+        z-index: 5;
+        display: block;
+        position: relative;
+        height: 24px;
+        width: 24px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .header_burger_span{
+        position: absolute;
+        background-color: rgba(49, 48, 55, 1);
+        border-radius: 4px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        top: 11px;
+    }
+
+    .header_burger::before,
+    .header_burger::after{
+        content: '';
+        background-color: rgba(49, 48, 55, 1);
+        border-radius: 4px;
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        left: 0;
+    }
+   .header_burger::before{
+        top: 0;
+    }
+    .header_burger::after{
+        bottom: 0;
+    }
+    .header-navigation{
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 320px;
+        height: 100%;
+        background: #4a4747;
+        transition: 0.3s; 
+    }
+    .header-navigation._active{
+        right: 0;
+    }
+    .header_burger._active{
+        transform: rotate(90deg);
+    }
+    .header-navigation._active{
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media (max-width: 406px){
+    .header{
+        margin-bottom: 56px;
+    }
+}
 
 

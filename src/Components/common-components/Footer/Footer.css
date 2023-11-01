@@ -3,6 +3,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 35px;
+    border-top: 0.0625rem solid #E7E7E7;
 }
 .footer-text{
     color: var(--system-colors-secondary, #A8A8A8);
@@ -11,4 +12,12 @@
     font-style: normal;
     font-weight: 300;
     line-height: 24px;
+}
+@media(max-width: 417px){
+    .footer-wrap{
+        flex-direction: column;
+    }
+    .footer-text-first{
+        margin-bottom: 24px;
+    }
 }

@@ -1,3 +1,8 @@
+.container{
+    max-width: 1200px;
+    padding: 0px 40px;
+    margin: auto;
+}
 .arrow-wrap{
     padding-bottom: 32px;
 }
@@ -30,7 +35,6 @@
     justify-content: center;
     align-items: center;
     padding-left: 32px;
-    gap: 130px;
 }
 .cart-text{
     padding: 24px 0;
@@ -46,6 +50,7 @@
     line-height: 32px;
 }
 .cart_subtitle{
+    width: 446px;
     color: var(--system-colors-secondary, #A8A8A8);
     font-family: Onest;
     font-size: 16px;
@@ -54,12 +59,15 @@
     line-height: 24px;
 }
 .cart-price{
+    width: 87px;
     color: var(--system-colors-primary, #313037);
     font-family: Oswald;
     font-size: 40px;
     font-style: normal;
     font-weight: 600;
     line-height: 60px;
+    padding: 0px 113px 0px 130px;
+    height: 60px;
 }
 .btn-delete-wrap{
     display: flex;
@@ -68,6 +76,7 @@
     width: 56px;
     height: 56px;
     padding: 16px;
+    overflow: hidden;
 }
 .btn_delete{
     cursor: pointer;
@@ -76,6 +85,7 @@
     height: 24px;
     flex-shrink: 0;
     background-color: #FFF;
+
 }
 @media(max-width: 1056px){
     .cart-wrap-img{
@@ -85,41 +95,14 @@
         width: 133px;
         height: 155px;
     }
-    .cart-wrap-info{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-left: 32px;
-        gap: 130px;
-    }
     .cart-text{
-        padding: 24px 0;
+        padding: 16px 0px 24px 0px;
     }
     .cart-name{
-        width: 446px;
-        padding-bottom: 8px;
-        color: var(--system-colors-primary, #313037);
-        font-family: Oswald;
-        font-size: 24px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 32px;
+        width: 360px;
     }
     .cart_subtitle{
-        color: var(--system-colors-secondary, #A8A8A8);
-        font-family: Onest;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 300;
-        line-height: 24px;
-    }
-    .cart-price{
-        color: var(--system-colors-primary, #313037);
-        font-family: Oswald;
-        font-size: 40px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 60px;
+        max-width: 447px;
     }
     .btn-delete-wrap{
         display: flex;

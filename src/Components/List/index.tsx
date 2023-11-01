@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ListItem from './ListItem';
 import { title } from 'process';
 import Button from '../common-components/Button';
@@ -19,6 +19,8 @@ interface IListItemProps{
 }
 
 const List = ({ list } : IListProps) => {
+  const [counts, setCounts] = useState();
+  
   const dispatch = useAppDispatch();
 
   const cart = useSelector((state: any) => state.cart);
