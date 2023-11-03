@@ -16,6 +16,7 @@ interface IListItemProps{
   subtitle?: string;
   id?: number | undefined;
   price?: number;
+  count?: number;
 }
 
 const ListCart = ({ list } : IListProps) => {
@@ -38,6 +39,7 @@ const ListCart = ({ list } : IListProps) => {
               subtitle={list[key].subtitle}
               price={list[key].price}
               id={list[key].id}
+              count={cart[key1].counts?.[cart[key1].id]}
               onRemove={() => onRemove(list[key].isbn13)}
             />
           );
@@ -54,7 +56,7 @@ const ListCart = ({ list } : IListProps) => {
   );
 };
 
-const ListItem1 = ({ title, image, subtitle, onRemove, id, price} : IListItemProps & {onRemove:(id:number) => void}) => 
+const ListItem1 = ({ title, image, subtitle, onRemove, id, price, count} : IListItemProps & {onRemove:(id:number) => void}) => 
   <li className='cart-list-items' key={title}>
     <div className="cart-list-item">
       <div className='cart-wrap-img'>
@@ -66,6 +68,7 @@ const ListItem1 = ({ title, image, subtitle, onRemove, id, price} : IListItemPro
         <h4 className='cart_subtitle'>{subtitle}</h4> 
       </div>
       <div className="cart-price">{price}</div>
+      <div className="cart-count">{count}</div>
       <div className="btn-delete-wrap">
         <Button className='btn_delete' onClick={() => onRemove(id)}>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
