@@ -59,7 +59,7 @@ const ListItem1 = ({ title, image, subtitle, price, id, onAdd } : IListItemProps
       <h3 className='book-name'>{title}</h3>
       <h4 className="book_subtitle">{subtitle}</h4>
       <h3 className="price">{price}</h3>
-      <Button className='btn_add' onClick={() => onAdd(id)}>ADD TO CART</Button>
+      { id !== undefined && <Button className='btn_add' onClick={() => onAdd(id)}>ADD TO CART</Button>}
     </li>
 ;
 
